@@ -1,0 +1,309 @@
+/* Footer tác giả */
+.footer-author {
+	width: 100%;
+	text-align: center;
+	margin-top: 36px;
+	margin-bottom: 18px;
+	font-size: 17px;
+	color: #475569;
+	letter-spacing: 0.5px;
+	font-weight: 500;
+	opacity: 0.95;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	font-family: 'Segoe UI', Arial, sans-serif;
+	background: 
+		linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
+		url('bg-anime.png') center/cover fixed no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	color: #222;
+	position: relative;
+	overflow-x: hidden;
+}
+
+/* Decorative background elements */
+body::before {
+	content: '';
+	position: fixed;
+	top: -10%;
+	left: 5%;
+	width: 300px;
+	height: 300px;
+	background: radial-gradient(circle, rgba(255,182,193,0.15) 0%, transparent 70%);
+	border-radius: 50%;
+	animation: float1 6s ease-in-out infinite;
+	pointer-events: none;
+	z-index: 0;
+}
+
+body::after {
+	content: '';
+	position: fixed;
+	bottom: -5%;
+	right: 5%;
+	width: 400px;
+	height: 400px;
+	background: radial-gradient(circle, rgba(144,238,144,0.12) 0%, transparent 70%);
+	border-radius: 50%;
+	animation: float2 8s ease-in-out infinite;
+	pointer-events: none;
+	z-index: 0;
+}
+
+/* Floating animation */
+@keyframes float1 {
+	0%, 100% { transform: translateY(0px) translateX(0px); }
+	50% { transform: translateY(-30px) translateX(20px); }
+}
+
+@keyframes float2 {
+	0%, 100% { transform: translateY(0px); }
+	50% { transform: translateY(30px); }
+}
+
+/* Decorative leaf and flower animations */
+@keyframes sway {
+	0%, 100% { transform: rotate(0deg) translateX(0px); }
+	50% { transform: rotate(5deg) translateX(8px); }
+}
+
+@keyframes drift {
+	0%, 100% { transform: translateX(0px) translateY(0px); }
+	25% { transform: translateX(10px) translateY(-5px); }
+	50% { transform: translateX(0px) translateY(-10px); }
+	75% { transform: translateX(-10px) translateY(-5px); }
+}
+
+/* Decorative corner elements */
+.deco-top-left {
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	font-size: 60px;
+	opacity: 0.3;
+	z-index: 0;
+	animation: sway 4s ease-in-out infinite;
+	pointer-events: none;
+}
+
+.deco-top-right {
+	position: fixed;
+	top: 40px;
+	right: 30px;
+	font-size: 50px;
+	opacity: 0.25;
+	z-index: 0;
+	animation: drift 5s ease-in-out infinite;
+	pointer-events: none;
+}
+
+.deco-bottom-left {
+	position: fixed;
+	bottom: 50px;
+	left: 40px;
+	font-size: 55px;
+	opacity: 0.28;
+	z-index: 0;
+	animation: drift 6s ease-in-out infinite;
+	pointer-events: none;
+}
+
+.deco-bottom-right {
+	position: fixed;
+	bottom: 100px;
+	right: 50px;
+	font-size: 65px;
+	opacity: 0.2;
+	z-index: 0;
+	animation: sway 5s ease-in-out infinite;
+	pointer-events: none;
+}
+
+header, .intro-container, .clubs-container, .club-detail-container {
+	background: rgba(255,255,255,0.92);
+	border-radius: 18px;
+	box-shadow: 0 6px 32px rgba(71,85,105,0.10);
+	margin: 32px auto;
+	padding: 36px 32px 40px 32px;
+	max-width: 900px;
+	position: relative;
+	z-index: 10;
+}
+
+h1, h2, h3 {
+	color: #2d8cf0;
+	text-align: center;
+	margin-bottom: 18px;
+	letter-spacing: 1px;
+}
+
+.next-btn, .back-btn {
+	display: inline-block;
+	margin-top: 30px;
+	padding: 12px 32px;
+	background: linear-gradient(90deg, #2d8cf0 60%, #475569 100%);
+	color: #fff;
+	border-radius: 24px;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: 500;
+	box-shadow: 0 2px 8px rgba(45,140,240,0.10);
+	transition: background 0.2s, transform 0.2s;
+	border: none;
+	cursor: pointer;
+}
+.next-btn:hover, .back-btn:hover {
+	background: linear-gradient(90deg, #475569 60%, #2d8cf0 100%);
+	transform: translateY(-2px) scale(1.04);
+}
+
+.clubs-container h2 {
+	margin-bottom: 32px;
+}
+.club-group {
+	margin-bottom: 32px;
+}
+.club-group h3 {
+	color: #475569;
+	margin-bottom: 18px;
+}
+.clubs-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 32px;
+	justify-content: flex-start;
+	margin-bottom: 10px;
+}
+.club-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-decoration: none;
+	color: #222;
+	width: 120px;
+	transition: transform 0.2s, box-shadow 0.2s;
+	border-radius: 16px;
+	padding: 12px 0 0 0;
+	background: rgba(255,255,255,0.85);
+	box-shadow: 0 2px 8px rgba(45,140,240,0.06);
+	position: relative;
+	overflow: hidden;
+}
+.club-item:hover {
+	transform: translateY(-6px) scale(1.07);
+	box-shadow: 0 8px 24px rgba(45,140,240,0.13);
+	background: #eaf3fb;
+}
+.club-icon {
+	width: 80px;
+	height: 80px;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 3px solid #2d8cf0;
+	background: #eaf3fb;
+	margin-bottom: 10px;
+	box-shadow: 0 2px 8px rgba(45,140,240,0.08);
+	transition: border 0.2s, box-shadow 0.2s;
+}
+.club-item:hover .club-icon {
+	border: 3px solid #475569;
+	box-shadow: 0 4px 16px rgba(71,85,105,0.13);
+}
+.club-item span {
+	font-size: 17px;
+	font-weight: 500;
+	margin-top: 4px;
+	text-align: center;
+	letter-spacing: 0.5px;
+}
+
+.club-detail-container {
+	max-width: 600px;
+	margin: 50px auto;
+	background: rgba(255,255,255,0.97);
+	border-radius: 18px;
+	box-shadow: 0 6px 32px rgba(71,85,105,0.10);
+	padding: 36px 28px 40px 28px;
+	text-align: center;
+}
+.club-detail-img {
+	width: 120px;
+	height: 120px;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 4px solid #2d8cf0;
+	background: #eaf3fb;
+	margin-bottom: 18px;
+	box-shadow: 0 2px 8px rgba(45,140,240,0.10);
+	transition: border 0.2s, box-shadow 0.2s;
+}
+.club-detail-container p {
+	font-size: 18px;
+	margin: 12px 0;
+}
+.back-btn {
+	margin-bottom: 18px;
+	margin-top: 0;
+	background: linear-gradient(90deg, #475569 60%, #2d8cf0 100%);
+}
+.back-btn:hover {
+	background: linear-gradient(90deg, #2d8cf0 60%, #475569 100%);
+}
+
+/* Hiệu ứng nổi bật cho icon khi hover */
+.club-item::after {
+	content: '';
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	border-radius: 16px;
+	background: radial-gradient(circle, rgba(45,140,240,0.08) 0%, transparent 80%);
+	opacity: 0;
+	transition: opacity 0.3s;
+	pointer-events: none;
+}
+.club-item:hover::after {
+	opacity: 1;
+}
+
+/* Thanh điều hướng đẹp */
+nav {
+	text-align: center;
+	margin-bottom: 30px;
+	background: rgba(45,140,240,0.13);
+	padding: 16px 0 10px 0;
+	border-radius: 16px;
+	box-shadow: 0 2px 8px rgba(45,140,240,0.06);
+}
+nav a {
+	text-decoration: none;
+	color: #2d8cf0;
+	margin: 0 20px;
+	font-weight: bold;
+	font-size: 18px;
+	letter-spacing: 0.5px;
+	transition: color 0.2s, text-shadow 0.2s;
+}
+nav a:hover {
+	color: #475569;
+	text-shadow: 0 2px 8px #2d8cf055;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+	.clubs-list {
+		flex-direction: column;
+		align-items: center;
+		gap: 18px;
+	}
+	.club-item {
+		width: 90vw;
+		max-width: 320px;
+	}
+	.club-detail-container, .clubs-container, .intro-container {
+		padding: 18px 6vw;
+	}
+}
